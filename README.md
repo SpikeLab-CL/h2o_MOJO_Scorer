@@ -1,4 +1,4 @@
-#### H2O.ai MOJO Scorer
+### H2O.ai MOJO Scorer
 
 Deploy MOJO models as REST APIs easily using Javalin.io
 
@@ -6,7 +6,7 @@ Deploy MOJO models as REST APIs easily using Javalin.io
 * https://github.com/rubuntu/H2O_Mojo_Model_Scorer
 
 
-###### TODOS
+##### TODOS
 * Add users authentication
 * Add JWT
 * Support Clustering models
@@ -24,15 +24,17 @@ Deploy MOJO models as REST APIs easily using Javalin.io
 
 ##### REST API
 
-| Method  | Endpoint | Description |
-| ------------- | ------------- | ------------- |
-| POST  | /model/:model/predict | Make a single prediction from the specified model name
-| PUT  | /upload/:model | Upload a MOJO and set name to the model
-| GET  | /models/list | List all available models name
+| Method  | Endpoint | Description | JWT protected
+| ------------- | ------------- | ------------- |------------- |
+| POST  | /model/:model/predict | Make a single prediction from the specified model name | True
+| PUT  | /upload/:model | Upload a MOJO and set name to the model | True
+| GET  | /models/list | List all available models name | True
+| POST  | /users/get_token | Returns a valid JWT Token | False
 
 #### Important 
 * The `data` must be send as `form-data`, specifying the variable names and values.
 * `MOJOs` are send in a `form-data` too, the `key` must be called `model`and the value is the `MOJO` zip file.
+* By default creates a username and password called `admin` and `pass`, those are stored in a `List`, you can change the code and add a database connection or whatever to get your users.
 
 #### Response example:
 ```
