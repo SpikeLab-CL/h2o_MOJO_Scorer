@@ -17,6 +17,12 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<repositories>
+	 	<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -31,7 +37,13 @@
 			<artifactId>javalin</artifactId>
 			<version>2.4.0</version>
 		</dependency>
-
+		
+		<dependency>
+		    <groupId>com.github.kmehrunes</groupId>
+		    <artifactId>javalin-jwt</artifactId>
+		    <version>v0.1</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
@@ -54,6 +66,12 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.auth0</groupId>
+		    <artifactId>java-jwt</artifactId>
+		    <version>3.4.1</version>
 		</dependency>
 
 	</dependencies>
