@@ -65,7 +65,7 @@ public class Main {
 					ctx.result(response.toString());
 				}
 			} else {
-				ctx.result("Invalid credentials!");
+				ctx.result("Invalid or no provided token!");
 			}
 
 		});
@@ -84,7 +84,7 @@ public class Main {
 					}
 				});
 			} else {
-				ctx.result("Invalid credentials!");
+				ctx.result("Invalid or no provided token!");
 			}
 		});
 
@@ -103,7 +103,7 @@ public class Main {
 				response.add("model_list", modelList);
 				ctx.result(response.toString());
 			} else {
-				ctx.result("Invalid credentials!");
+				ctx.result("Invalid or no provided token!");
 			}
 
 		});
@@ -117,7 +117,7 @@ public class Main {
 					String token = provider.generateToken(user);
 					ctx.json(new JWTResponse(token));
 				} else {
-					ctx.result("Invalid credentials!");
+					ctx.result("Invalid or no provided token!");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

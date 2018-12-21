@@ -9,7 +9,7 @@ Deploy MOJO models as REST APIs easily using Javalin.io
 ##### TODOS
 * ~~Add users authentication~~
 * ~~Add JWT~~
-* Support Clustering models
+* ~~Support Clustering models~~
 * Support predict over CSV files
 
 #### Usage

@@ -11,6 +11,7 @@ import hex.genmodel.easy.EasyPredictModelWrapper;
 import hex.genmodel.easy.RowData;
 import hex.genmodel.easy.exception.PredictException;
 import hex.genmodel.easy.prediction.BinomialModelPrediction;
+import hex.genmodel.easy.prediction.ClusteringModelPrediction;
 import hex.genmodel.easy.prediction.RegressionModelPrediction;
 
 public class H2OScorerWrapper {
@@ -53,6 +54,11 @@ public class H2OScorerWrapper {
 			BinomialModelPrediction p = predictModelWrapper.predictBinomial(data);
 			String label = p.label;
 			return label;
+		}
+		else if(modelCategory.toString().equals("Clustering")) {
+			ClusteringModelPrediction p = predictModelWrapper.predictClustering(data);
+			int cluster = p.cluster;
+			return Integer.toString(cluster);
 		}
 		else {
 			return "model type not supported";
